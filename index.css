@@ -214,6 +214,110 @@ main>img {
     letter-spacing: -0.66px;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 16px;
+    width: min-content;
+    align-items: flex-start;
+}
+
+input,
+textarea {
+    width: 442px;
+    padding: 16px 28px 18px 16px;
+    border-radius: 16px 4px;
+    border: 2px solid #D6E0EA;
+    resize: none !important;
+    color: #617283;
+    font-size: 20px;
+    line-height: 130%;
+    letter-spacing: -0.6px;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+}
+
+input[type="checkbox"] {
+    margin-right: 8px;
+    width: 24px;
+    height: 24px;
+    display: none;
+}
+
+input[type="checkbox"]:checked+label:before,
+input[type="checkbox"]:not(:checked)+label:before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 1px;
+    width: 22px;
+    height: 22px;
+    border: 2px solid #D6E0EA;
+    background-color: #ffffff;
+    border-radius: 0px 9px;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked+label:before {
+    background-image: url('assets/checked.svg');
+    background-position-x: -3px;
+    background-position-y: -3px;
+}
+
+label {
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+form>div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: relative;
+}
+
+.close {
+    background: url('assets/close.svg');
+    border: none;
+    width: 32px;
+    height: 32px;
+}
+
+.modal-header {
+    border: none !important;
+}
+
+.modal-title {
+    color: #303C48;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 50px;
+    letter-spacing: -1.2px;
+    border-right: 2px solid rgba(214, 224, 234, 1);
+    border-left: 2px solid rgba(214, 224, 234, 1);
+    padding: 0px 16px;
+    border-radius: 10px 0px;
+    margin-left: 12px;
+}
+
+button[type="submit"] {
+    background: #394697;
+    color: #FFF;
+    font-size: 20px;
+    line-height: 130%;
+    letter-spacing: -0.6px;
+    width: 100% !important;
+    margin-top: 19px;
+}
+
+button[type="submit"]>img {
+    margin-left: 12px;
+}
+
 @media screen and (max-width: 1440px) {
     main {
         margin-top: 150px;
@@ -359,6 +463,32 @@ main>img {
         border-right: none;
         border-bottom: 2px solid rgba(214, 224, 234, 1);
         padding-bottom: 16px;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    form>input,
+    form>textarea {
+        width: 100%;
+        font-size: 16px;
+        line-height: 130%;
+        letter-spacing: -0.48px;
+    }
+
+    .modal-title {
+        font-size: 24px;
+        font-family: Aeroport;
+        font-weight: 700;
+        line-height: 28px;
+        letter-spacing: -0.72px;
+    }
+
+    button[type="submit"] {
+        font-size: 16px;
+        line-height: 130%;
+        letter-spacing: -0.48px;
     }
 }
 
