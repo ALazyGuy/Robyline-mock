@@ -1,0 +1,409 @@
+* {
+    font-family: 'Aeroport';
+}
+
+body {
+    max-width: 1320px;
+    padding: 0px calc((100vw - 1320px) / 2);
+    box-sizing: content-box;
+}
+
+.button {
+    padding: 10px 20px;
+    border-radius: 20px 4px;
+    border: 2px solid #394697;
+    width: fit-content;
+    cursor: pointer;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+}
+
+header>.contacts>img {
+    display: none;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: fit-content;
+}
+
+.image {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 41px;
+    height: 41px;
+    margin-right: 10px;
+}
+
+.image>div {
+    width: 20px;
+    height: 20px;
+}
+
+.image>div:nth-child(2n + 1) {
+    margin-right: 1px;
+    margin-bottom: 1px;
+}
+
+.image>.light {
+    background-color: rgba(24, 178, 232, 1);
+}
+
+.image>.dark {
+    background-color: rgba(57, 70, 151, 1);
+    border-top-right-radius: 20px;
+}
+
+.image>div:nth-child(3n) {
+    transform: rotate(180deg);
+}
+
+.logo>.text {
+    color: rgba(57, 70, 151, 1);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.logo .name {
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 30px;
+}
+
+.logo .phrase {
+    font-size: 7px;
+    line-height: 7px;
+}
+
+.contacts>.phone {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.phone>span {
+    color: #394697;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+.phone>img {
+    margin-right: 5px;
+}
+
+main {
+    margin-top: 220px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    position: relative;
+}
+
+main>*:not(.advantages) {
+    width: 60%;
+}
+
+main>img {
+    position: absolute;
+    z-index: -1;
+    left: 585px;
+    top: 0px;
+}
+
+.solutions {
+    color: #75818D;
+    font-size: 24px;
+    line-height: 26px;
+    letter-spacing: -0.72px;
+    margin-bottom: 20px;
+}
+
+.main-text {
+    color: #303C48;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 58.5px;
+    letter-spacing: -1.92px;
+    margin-bottom: 50px;
+}
+
+.actions {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-bottom: 230px;
+}
+
+.request {
+    margin-right: 15px;
+}
+
+.request,
+.download {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background: #394697;
+    color: #FFF;
+    font-size: 20px;
+    line-height: 130%;
+    letter-spacing: -0.6px;
+}
+
+.request>img,
+.download>img {
+    margin-left: 12px;
+}
+
+.request>span,
+.download>span {
+    min-width: fit-content;
+}
+
+.download {
+    color: #394697;
+    background: #FFF;
+}
+
+.advantages {
+    padding-top: 32px;
+    padding-bottom: 80px;
+    border-top: 2px solid rgba(214, 224, 234, 1);
+}
+
+.col {
+    border-right: 2px solid rgba(214, 224, 234, 1);
+    border-bottom-right-radius: 25px;
+}
+
+.col:nth-child(4n) {
+    border-right: none;
+}
+
+.col>.count {
+    box-sizing: content-box;
+    border-radius: 16px 0px;
+    background: rgba(201, 209, 217, 0.20);
+    padding: 7px 11px 7px 8px;
+    width: 18px;
+    height: 22px;
+    color: #18B2E8;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: -0.54px;
+    margin-bottom: 16px;
+}
+
+.col>.text {
+    color: #3B4147;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -0.66px;
+}
+
+@media screen and (max-width: 1440px) {
+    main {
+        margin-top: 150px;
+    }
+
+    main>img {
+        left: 500px;
+    }
+
+    .actions {
+        margin-bottom: 150px;
+    }
+
+    .advantages {
+        padding-bottom: 44px;
+    }
+}
+
+@media screen and (max-width: 1385px) {
+    body {
+        padding: 0px 32px;
+    }
+
+    .advantages {
+        max-width: fit-content !important;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    main {
+        margin-top: 100px;
+    }
+
+    main>img {
+        left: 460px;
+    }
+
+    main>.solutions {
+        font-size: 20px;
+        line-height: 22px;
+        letter-spacing: -0.6px;
+    }
+
+    main>.main-text {
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 40px;
+        letter-spacing: -1.2px;
+    }
+
+    .actions {
+        margin-bottom: 100px;
+    }
+
+    .col>.text,
+    .col>.count {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 22px;
+        letter-spacing: -0.6px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    main>img {
+        left: 400px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .phone>span {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 20px;
+    }
+
+    main>img {
+        left: 340px;
+    }
+
+    main>.solutions {
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: -0.48px;
+    }
+
+    main>.main-text {
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 34px;
+        letter-spacing: -0.96px;
+    }
+
+    .actions {
+        flex-direction: column;
+        width: fit-content !important;
+        position: relative;
+    }
+
+    .actions>* {
+        width: 100%;
+    }
+
+    .actions>*>span {
+        font-size: 16px;
+        line-height: 16px;
+        letter-spacing: -0.48px;
+        height: 16px;
+    }
+
+    .actions>*:first-child {
+        margin-bottom: 12px;
+    }
+
+    .advantages {
+        border-top: none;
+    }
+
+    .col:nth-child(2n) {
+        border-right: none;
+    }
+
+    .col {
+        margin-bottom: 20px;
+    }
+
+    .col>.text,
+    .col>.count {
+        font-size: 16px;
+        line-height: 130%;
+        letter-spacing: -0.48px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    main>img {
+        left: 280px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .col {
+        border-right: none;
+        border-bottom: 2px solid rgba(214, 224, 234, 1);
+        padding-bottom: 16px;
+    }
+}
+
+@media screen and (max-width: 510px) {
+
+    body {
+        padding: 0px 20px;
+    }
+
+    main {
+        background: none;
+    }
+
+    header>.contacts>div {
+        display: none !important;
+    }
+
+    header>.contacts>img {
+        display: block;
+        height: 40px;
+    }
+
+    main {
+        position: relative;
+        justify-content: center;
+    }
+
+    main span {
+        text-align: center;
+    }
+
+    main>*:not(.advantages) {
+        width: 100% !important;
+    }
+
+    main>img {
+        position: static;
+    }
+
+    .actions>* {
+        justify-content: center;
+        height: 54px;
+    }
+
+    .actions>* {
+        align-items: center;
+    }
+}
