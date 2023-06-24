@@ -245,6 +245,11 @@ form>div.err {
     flex-direction: column;
     gap: 5px;
     flex-wrap: nowrap;
+    width: 100%;
+}
+
+form>div.err>input {
+    width: 100%;
 }
 
 input:focus,
