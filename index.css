@@ -218,7 +218,7 @@ form {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    gap: 16px;
+    gap: 8px;
     width: min-content;
     align-items: flex-start;
 }
@@ -234,6 +234,17 @@ textarea {
     font-size: 20px;
     line-height: 130%;
     letter-spacing: -0.6px;
+}
+
+form>div>span {
+    display: none;
+}
+
+form>div.err {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex-wrap: nowrap;
 }
 
 input:focus,
@@ -266,6 +277,20 @@ input[type="checkbox"]:checked+label:before {
     background-image: url('assets/checked.svg');
     background-position-x: -3px;
     background-position-y: -3px;
+}
+
+input.invalid, span.invalid {
+    color: #FF4747;
+}
+
+input.required:after {
+    content: '*';
+    display: inline;
+    color: #617283;
+}
+
+input.invalid.required:after {
+    color: #FF4747;
 }
 
 label {
@@ -470,7 +495,8 @@ button[type="submit"]>img {
     }
 
     form>input,
-    form>textarea {
+    form>textarea,
+    form>div>span {
         width: 100%;
         font-size: 16px;
         line-height: 130%;
