@@ -1,5 +1,7 @@
 let iti = null;
 
+const masks = {'by': '+375 (XX) XXX-XX-XX'};
+
 class PhoneMask {
     constructor() {
         this.value = '';
@@ -15,7 +17,6 @@ class PhoneMask {
     }
 
     isValid() {
-        console.log(this.cleanMask + " " + this.value);
         return this.cleanMask.length === this.value.length;
     }
 
@@ -138,11 +139,13 @@ window.onload = () => {
     iti = window.intlTelInput(input, {
         utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/utils.js",
         autoPlaceholder: 'aggressive',
-        separateDialCode: true,
-        initialCountry: 'ru'
+        initialCountry: 'ru',
+        onlyCountries: ['ru', 'by', 'kz', 'uz', 'ua', 'pl', 'tm', 'tj', 'kg'],
     });
 
     input.addEventListener("countrychange", function () {
         mask.setMask(iti.a.placeholder);
+        input.value = '';
+        clean(input, phoneInvalid);
     });
 };
