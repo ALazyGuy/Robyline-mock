@@ -1,6 +1,16 @@
 let iti = null;
 
-const masks = {'by': '+375 (XX) XXX-XX-XX'};
+const masks = {
+    ru: '(XXX) XXX-XX-XX',
+    by: '(XX) XXX-XX-XX',
+    kz: '(XXX) XXX-XX-XX',
+    uz: '(XX) XXX-XX-XX',
+    ua: '(XX) XXX-XX-XX',
+    pl: '(XX) XXX-XX-XX',
+    tm: '(XXX) XX-XX-X',
+    tj: '(XXX) XX-XX-XX',
+    kg: '(XXX) XX-XX-XX'
+};
 
 class PhoneMask {
     constructor() {
@@ -59,7 +69,7 @@ class PhoneMask {
         let counter = 0;
 
         for (let c of this.mask.split('')) {
-            if (/\d/.test(c)) {
+            if (c === 'X') {
                 if (this.value.length <= counter) {
                     break;
                 }
@@ -123,7 +133,7 @@ window.onload = () => {
         onError.style.display = 'none';
     };
 
-    mask.setMask('8 (912) 345-67-89');
+    mask.setMask(masks['ru']);
 
     phone.onkeydown = () => clean(phone, phoneInvalid);
     email.onkeydown = () => clean(email, emailInvalid);
@@ -138,14 +148,18 @@ window.onload = () => {
     const input = document.querySelector("#phone");
     iti = window.intlTelInput(input, {
         utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/utils.js",
-        autoPlaceholder: 'aggressive',
+        autoPlaceholder: 'off',
         initialCountry: 'ru',
+        separateDialCode: true,
         onlyCountries: ['ru', 'by', 'kz', 'uz', 'ua', 'pl', 'tm', 'tj', 'kg'],
     });
 
+    input.placeholder = masks['ru'];
+
     input.addEventListener("countrychange", function () {
-        mask.setMask(iti.a.placeholder);
+        mask.setMask(masks[iti.s.iso2]);
         input.value = '';
+        input.placeholder = masks[iti.s.iso2];
         clean(input, phoneInvalid);
     });
 };
