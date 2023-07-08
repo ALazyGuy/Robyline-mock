@@ -22,7 +22,7 @@ class PhoneMask {
 
     setMask(mask) {
         this.mask = mask;
-        this.cleanMask = this.mask.split('').filter(c => /\d/.test(c)).join('');
+        this.cleanMask = this.mask.split('').filter(c => 'X' === c).join('');
         this.maskLength = this.mask.length;
     }
 
